@@ -1,6 +1,6 @@
 """
 Write three functions:
-sort1(langauges)
+sort1(languages)
 sort2(languages)
 sort3(langauges)
 Goal: Print exactly the below w/ three functions:
@@ -44,3 +44,34 @@ languages = {'JavaScript': 'P',
              'Latin': 'N',
              'Romanian': 'N',
              'English': 'N'}
+
+def sort1(languages):
+    lst = sorted(sorted(languages, key=languages.__getitem__))
+    for x in lst:
+        print("\t" + x) #print tab
+
+def sort1b(d):
+    import operator
+    lst = sorted(sorted(d.items()), key=operator.itemgetter(0))
+    print("1: ")
+    for languages, type_ in lst:
+        print("\t" + languages) #print tab
+
+def sort2(languages):
+    lst1 = sorted(languages)
+    lst2 = sorted(lst1, key=len)
+    print(lst2)
+
+def last_char(string):
+    return string[-1].lower()
+
+def sort3(d):
+    lst = sorted(sorted(d), key=last_char, reverse=True)
+    print("3: ")
+    for item in lst:
+        print("\t" + item)
+
+
+sort1b(languages)
+sort2(languages)
+sort3(languages)

@@ -13,7 +13,9 @@
 # Imports
 
 # Body
-
+def sumall(*args):
+    result = sum(args)
+    return result
 
 ##############################################################################
 def main():   # DO NOT CHANGE BELOW

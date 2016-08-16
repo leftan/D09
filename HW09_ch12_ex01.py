@@ -11,11 +11,23 @@
 
 
 # Body
+def count(s):
+    d = dict()
+    for item in s:
+        item = item.lower()
+        d[item] = d.get(item, 0) + 1
+    return d
+
+
 def most_frequent(s):
-    ...
+    # print(lst)
+    d = count(s)
+    result = sorted(sorted(d), key=d.__getitem__, reverse=True)
+    for item in result:
+        print("\t" + item)
 
 
-###############################################################################
+# ###############################################################################
 def main():   # DO NOT CHANGE BELOW
     print("Example 1:")
     most_frequent("abcdefghijklmnopqrstuvwxyz")
